@@ -79,7 +79,7 @@ int main()
     /*raytracing(pixels, background,
                rectangulars, spheres, lights, &view, ROWS, COLS);*/
 	for(i=0; i<NUM_PTHREAD; i++){
-		if( (pthread_create( &pth_pool[ i ], NULL, raytracing, pth_node[ i ])) ){
+		if( !(pthread_create( &pth_pool[ i ], NULL, raytracing, pth_node[ i ])) ){
 			exit(1);
 		}
 	}
